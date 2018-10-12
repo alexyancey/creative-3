@@ -4,27 +4,29 @@ angular.module('app', []).controller('mainCtrl', mainCtrl)
 
 function mainCtrl($scope)
 {
-    
+    $scope.printRonQuote = function () 
+    {
+        var myurl = "http://ron-swanson-quotes.herokuapp.com/v2/quotes/";
+        var q = "\"";
+        console.log(myurl);
+        $.ajax({
+            url: myurl,
+            dataType: "json",
+            success: function(parsed_json) {
+                console.log(parsed_json[0]);
+                q += parsed_json[0];
+                console.log("q is: " + q);
+                q += "\" - Ron Swanson";
+                $scope.quote = q;
+                //$("#quote").html(q);
+            }
+        });
+        //$("#quote").html(q);
+    }
 }
 
 /*global $*/
-function printRonQuote() {
-    var myurl = "http://ron-swanson-quotes.herokuapp.com/v2/quotes/";
-    var q = "\"";
-    console.log(myurl);
-    $.ajax({
-        url: myurl,
-        dataType: "json",
-        success: function(parsed_json) {
-            console.log(parsed_json[0]);
-            q += parsed_json[0];
-            console.log("q is: " + q);
-            q += "\" - Ron Swanson";
-            $("#quote").html(q);
-        }
-    });
-    $("#quote").html(q);
-}
+
 
 function printQuote() {
     $.ajax({
@@ -46,7 +48,7 @@ function diplayPic() {
     url += int;
     $("#picture").html("<img src=" + url + " alt='try again, something went wrong' >");
 }
-$(document).ready(function() {
+/*$(document).ready(function() {
     $("#getRonQuote").click(function(e) {
         printRonQuote();
     });
@@ -79,4 +81,4 @@ $(document).ready(function() {
     $("#bottom").click(function(e) {
         $("#para").css("top", "490px");
     });
-})
+})*/

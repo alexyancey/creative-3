@@ -2,7 +2,11 @@
 <html>
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+        <script
+          src="http://code.jquery.com/jquery-3.2.1.min.js">
+        </script>
         <script src="script.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="main.css">
         <title>Angular Creative Project</title>
     </head>
@@ -15,15 +19,15 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-8">
-                        <button id="getQuote" type="button" class="btn btn-primary">Get Quote</button>
-                        <button id="getRonQuote" type="button" class="btn btn-primary">Get Ron Swanson Quote</button>
+                        <button id="getQuote" type="submit" class="btn btn-primary">Get Quote</button></form>
+                        <form ng-submit="printRonQuote()"><button id="getRonQuote" type="submit" class="btn btn-primary">Get Ron Swanson Quote</button></form>
                         <button id="getpic" type="button" class="btn btn-primary">Get Picture</button>
                         <button id="supriseMe" type="button" class="btn btn-primary">Suprise Me</button>
                         <div id="image" sytle="position:absolute;width:500px;">
                             <div id="picture" style="position:absolute">
                             </div>
                             <div class="container">
-                                <p id="para" class="blockquote" style="position:absolute;color:red;z-index:7;width:450px;font-size:20px"><em id="quote"></em></p>
+                                <p id="para" class="blockquote" style="position:absolute;color:red;z-index:7;width:450px;font-size:20px"><em id="quote">{{quote}}</em></p>
                             </div>
                         </div>
                     </div>
