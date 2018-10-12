@@ -23,31 +23,45 @@ function mainCtrl($scope)
         });
         //$("#quote").html(q);
     }
+    
+    $scope.printQuote = function () 
+    {
+        $.ajax({
+            url: "https://talaikis.com/api/quotes/random/",
+            //crossDomain: true,
+            dataType: "json",
+            success: function(parsed_json) {
+                console.log(parsed_json);
+                var by = "-" + parsed_json['author'];
+                $scope.quote = parsed_json['quote'] + by;
+                //$('#quote').html(parsed_json['quote'] + by);
+            }
+        });
+    }
+    
+    $scope.displayPic = function () 
+    {
+        //console.log("here")
+        var url = "https://picsum.photos/750/600/?image=";
+        var int = Math.ceil(Math.random() * 1084);
+        url += int;
+        $scope.picture = url;
+        $("#pic").css('visibility', 'visible');
+    }
+    
+    $scope.surpriseMe = function() 
+    {
+        $("#para").css("color", "black");
+        if (Math.random() < .5)
+            $scope.printQuote();
+        else
+            $scope.printRonQuote();
+        $scope.displayPic();
+    };
 }
 
 /*global $*/
 
-
-function printQuote() {
-    $.ajax({
-        url: "https://talaikis.com/api/quotes/random/",
-        //crossDomain: true,
-        dataType: "json",
-        success: function(parsed_json) {
-            console.log(parsed_json);
-            var by = "-" + parsed_json['author'];
-            $('#quote').html(parsed_json['quote'] + by);
-        }
-    });
-}
-
-function diplayPic() {
-    //console.log("here")
-    var url = "https://picsum.photos/750/600/?image=";
-    var int = Math.ceil(Math.random() * 1084);
-    url += int;
-    $("#picture").html("<img src=" + url + " alt='try again, something went wrong' >");
-}
 /*$(document).ready(function() {
     $("#getRonQuote").click(function(e) {
         printRonQuote();

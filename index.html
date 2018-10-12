@@ -19,12 +19,13 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-8">
-                        <button id="getQuote" type="submit" class="btn btn-primary">Get Quote</button></form>
+                        <form ng-submit="printQuote()"><button id="getQuote" type="submit" class="btn btn-primary">Get Quote</button></form>
                         <form ng-submit="printRonQuote()"><button id="getRonQuote" type="submit" class="btn btn-primary">Get Ron Swanson Quote</button></form>
-                        <button id="getpic" type="button" class="btn btn-primary">Get Picture</button>
-                        <button id="supriseMe" type="button" class="btn btn-primary">Suprise Me</button>
+                        <form ng-submit="displayPic()"><button id="getpic" type="submit" class="btn btn-primary">Get Picture</button></form>
+                        <form ng-submit="surpriseMe()"><button id="supriseMe" type="submit" class="btn btn-primary">Suprise Me</button></form>
                         <div id="image" sytle="position:absolute;width:500px;">
                             <div id="picture" style="position:absolute">
+                                <img src={{picture}} id="pic" style="visibility: hidden">
                             </div>
                             <div class="container">
                                 <p id="para" class="blockquote" style="position:absolute;color:red;z-index:7;width:450px;font-size:20px"><em id="quote">{{quote}}</em></p>
