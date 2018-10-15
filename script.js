@@ -41,7 +41,6 @@ function mainCtrl($scope)
     
     $scope.displayPic = function () 
     {
-        //console.log("here")
         var url = "https://picsum.photos/750/600/?image=";
         var int = Math.ceil(Math.random() * 1084);
         url += int;
@@ -58,6 +57,31 @@ function mainCtrl($scope)
             $scope.printRonQuote();
         $scope.displayPic();
     };
+    
+    $scope.whiteText = function () 
+    {
+        $("#para").css("color", "white");
+    }
+    
+    $scope.blackText = function ()
+    {
+        $("#para").css("color", "black");
+    }
+    
+    $scope.redText = function ()
+    {
+        $("#para").css("color", "red");
+    }
+    
+    $scope.topText = function ()
+    {
+        $("#para").css("top", "34px");
+    }
+    
+    $scope.bottomText = function ()
+    {
+        $("#para").css("top", "490px");
+    }
 }
 
 /*global $*/
