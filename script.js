@@ -1,6 +1,9 @@
 //Angular script
 
-angular.module('app', []).controller('mainCtrl', mainCtrl)
+/*global angular*/
+/*global $*/
+
+angular.module('app', []).controller('mainCtrl', mainCtrl);
 
 function mainCtrl($scope, $http) {
     $scope.printRonQuote = function() {
@@ -24,8 +27,14 @@ function mainCtrl($scope, $http) {
                 $scope.quote = response.data['quote'] + by;
             });
     }
+<<<<<<< HEAD
     $scope.displayPic = function() {
         //console.log("here")
+=======
+    
+    $scope.displayPic = function () 
+    {
+>>>>>>> 9919a4b4f76112c96fba7a85f6224f52861b741d
         var url = "https://picsum.photos/750/600/?image=";
         var int = Math.ceil(Math.random() * 1084);
         url += int;
@@ -41,41 +50,34 @@ function mainCtrl($scope, $http) {
             $scope.printRonQuote();
         $scope.displayPic();
     };
-}
-
-/*global $*/
-
-/*$(document).ready(function() {
-    $("#getRonQuote").click(function(e) {
-        printRonQuote();
-    });
-    $("#getQuote").click(function(x) {
-        printQuote();
-    });
-    $("#getpic").click(function(x) {
-        diplayPic();
-    });
-    $("#supriseMe").click(function(x) {
-        $("#para").css("color", "black");
-        if (Math.random() < .5)
-            printQuote();
-        else
-            printRonQuote();
-        diplayPic();
-    });
-    $("#black").click(function(e) {
-        $("#para").css("color", "black");
-    });
-    $("#white").click(function(e) {
+    
+    $scope.whiteText = function () 
+    {
         $("#para").css("color", "white");
-    });
-    $("#red").click(function(e) {
+    }
+    
+    $scope.blackText = function ()
+    {
+        $("#para").css("color", "black");
+    }
+    
+    $scope.redText = function ()
+    {
         $("#para").css("color", "red");
-    });
-    $("#top").click(function(e) {
+    }
+    
+    $scope.topText = function ()
+    {
         $("#para").css("top", "34px");
-    });
-    $("#bottom").click(function(e) {
+    }
+    
+    $scope.bottomText = function ()
+    {
         $("#para").css("top", "490px");
+<<<<<<< HEAD
     });
 })*/
+=======
+    }
+}
+>>>>>>> 9919a4b4f76112c96fba7a85f6224f52861b741d
