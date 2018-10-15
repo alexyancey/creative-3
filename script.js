@@ -1,6 +1,9 @@
 //Angular script
 
-angular.module('app', []).controller('mainCtrl', mainCtrl)
+/*global angular*/
+/*global $*/
+
+angular.module('app', []).controller('mainCtrl', mainCtrl);
 
 function mainCtrl($scope)
 {
@@ -83,40 +86,3 @@ function mainCtrl($scope)
         $("#para").css("top", "490px");
     }
 }
-
-/*global $*/
-
-/*$(document).ready(function() {
-    $("#getRonQuote").click(function(e) {
-        printRonQuote();
-    });
-    $("#getQuote").click(function(x) {
-        printQuote();
-    });
-    $("#getpic").click(function(x) {
-        diplayPic();
-    });
-    $("#supriseMe").click(function(x) {
-        $("#para").css("color", "black");
-        if (Math.random() < .5)
-            printQuote();
-        else
-            printRonQuote();
-        diplayPic();
-    });
-    $("#black").click(function(e) {
-        $("#para").css("color", "black");
-    });
-    $("#white").click(function(e) {
-        $("#para").css("color", "white");
-    });
-    $("#red").click(function(e) {
-        $("#para").css("color", "red");
-    });
-    $("#top").click(function(e) {
-        $("#para").css("top", "34px");
-    });
-    $("#bottom").click(function(e) {
-        $("#para").css("top", "490px");
-    });
-})*/

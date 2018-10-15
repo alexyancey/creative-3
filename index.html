@@ -18,33 +18,30 @@
             </center>
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-8">
-                        <form ng-submit="printQuote()"><button id="getQuote" type="submit" class="btn btn-primary">Get Quote</button></form>
-                        <br>
-                        <form ng-submit="printRonQuote()"><button id="getRonQuote" type="submit" class="btn btn-primary">Get Ron Swanson Quote</button></form>
-                        <br>
-                        <form ng-submit="displayPic()"><button id="getpic" type="submit" class="btn btn-primary">Get Picture</button></form>
-                        <br>
-                        <form ng-submit="surpriseMe()"><button id="supriseMe" type="submit" class="btn btn-primary">Surprise Me</button></form>
-                        <br>
-                        <div id="image" sytle="position:absolute;width:500px;">
-                            <div id="picture" style="position:absolute">
-                                <img src={{picture}} id="pic" style="visibility: hidden">
-                            </div>
-                            <div class="container">
-                                <p id="para" class="blockquote" style="position:absolute;color:red;z-index:7;width:450px;font-size:20px"><em id="quote">{{quote}}</em></p>
-                            </div>
+                    <table>
+                        <tr>
+                            <td><form ng-submit="printQuote()"><button id="getQuote" type="submit" class="btn btn-primary">Get Quote</button></form></td>
+                            <td><form ng-submit="printRonQuote()"><button id="getRonQuote" type="submit" class="btn btn-primary">Get Ron Swanson Quote</button></form></td>
+                            <td><form ng-submit="displayPic()"><button id="getpic" type="submit" class="btn btn-primary">Get Picture</button></form></td>
+                            <td><form ng-submit="surpriseMe()"><button id="supriseMe" type="submit" class="btn btn-primary">Surprise Me</button></form></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <td><form ng-submit="whiteText()"><button id="white" type="submit" class="btn btn-primary">White Text</button></form></td>
+                            <td><form ng-submit="blackText()"><button id="black" type="submit" class="btn btn-primary">Black Text</button></form></td>
+                            <td><form ng-submit="redText()"><button id="red" type="submit" class="btn btn-primary">Red Text</button></form></td>
+                            <td><form ng-submit="topText()"><button id="top" type="submit" class="btn btn-primary">Text to Top</button></form></td>
+                            <td><form ng-submit="bottomText()"><button id="bottom" type="submit" class="btn btn-primary">Text to Bottom</button></form></td>
+                        </tr>
+                    </table>
+                    <div id="image" sytle="position:absolute;width:500px;">
+                        <div id="picture" style="position:absolute">
+                            <img src={{picture}} id="pic" style="visibility: hidden">
                         </div>
-                    </div>
-                    <div id="edit-buttons" style="position:relative" class="col-sm-4">
-                        <div id="color-buttons" class="row">
-                            <form ng-submit="whiteText()"><button id="white" type="submit" class="btn btn-primary">White Text</button></form>
-                            <form ng-submit="blackText()"><button id="black" type="submit" class="btn btn-primary">Black Text</button></form>
-                            <form ng-submit="redText()"><button id="red" type="submit" class="btn btn-primary">Red Text</button></form>
-                        </div>
-                        <div id="move-buttons" class="row">
-                            <form ng-submit="topText()"><button id="top" type="submit" class="btn btn-primary">Text to Top</button></form>
-                            <form ng-submit="bottomText()"><button id="bottom" type="submit" class="btn btn-primary">Text to Bottom</button></form>
+                        <div class="container">
+                            <p id="para" class="blockquote" style="position:absolute;color:red;z-index:7;width:450px;font-size:20px"><em id="quote">{{quote}}</em></p>
                         </div>
                     </div>
                 </div>
