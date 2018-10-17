@@ -9,3 +9,11 @@ body {
 .row {
     display: inline-block;
 }
+
+#container, #image, #picture {
+    text-align: center;
+}
+
+table {
+    display: inline-block;
+}
