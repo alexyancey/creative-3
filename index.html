@@ -43,15 +43,13 @@
                         <td><form ng-submit="bottomText()"><button id="bottom" type="submit" class="btn btn-primary">Text to Bottom</button></form></td>
                     </tr>
                 </table>
-                <div id="image">
                     <div id="picture">
                         <img src={{picture}} id="pic" style="visibility: hidden">
                     </div>
-                    <div class="container">
-                        <p id="para" class="blockquote" style="position:absolute;color:red;z-index:7;width:450px;font-size:20px"><em id="quote">{{quote}}</em></p>
-                    </div>
+                    <center>
+                        <p id="para" style="position:relative;width:300px;font-size:20px"><em id="quote">{{quote}}</em></p>
+                    </center>
                 </div>
-            </div>
         </div>
     </body>
 </html>
