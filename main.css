@@ -1,5 +1,10 @@
 body {
     background-color: beige;
+    background-image: url("white-wood.jpg");
+}
+
+h1 {
+    color: black;
 }
 
 .container {
